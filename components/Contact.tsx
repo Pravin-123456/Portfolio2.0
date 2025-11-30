@@ -38,7 +38,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
         <div className="flex-1 flex flex-col md:flex-row items-start md:justify-end gap-10 lg:gap-20">
           {/* Company Links */}
           <div>
-            <h2 className="font-semibold mb-5 text-white text-lg tracking-wide">Quick Links</h2>
+            <h2 className="font-semibold mb-5 text-white text-lg tracking-wide whitespace-nowrap">Quick Links</h2>
             <ul className="text-sm space-y-3 text-gray-400">
               {[
                 { label: "Home", id: SectionId.HOME },
@@ -78,20 +78,22 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
               />
               <button 
                 type="submit" 
-                className="group relative px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full font-bold text-white shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 transition-all flex items-center justify-center gap-2"
+                className="group relative w-[8rem] py-3 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full font-bold text-white shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 transition-all flex items-center justify-center gap-2"
               >
                 Send <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
             </form>
             
             {/* Social Links moved here */}
-            <SocialLinks />
+            <div className="w-full md:w-64">
+              <SocialLinks />
+            </div>
           </div>
         </div>
       </div>
 
       {/* Footer Bottom */}
-      <div className="py-8 flex flex-col md:flex-row items-center justify-center md:justify-between text-xs md:text-sm text-gray-500 relative z-10">
+      <div className="py-8 flex flex-col md:flex-row items-center justify-center text-xs md:text-sm text-gray-500 relative z-10">
         <p>© {year} Pravin. All rights reserved.</p>
       </div>
     </footer>

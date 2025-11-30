@@ -70,7 +70,7 @@ const Hero: React.FC<HeroProps> = ({ id }) => {
           >
             I ship pixel-perfect, lightning-fast web apps that feel like magic.
           </MotionP>
-
+          <a href='#projects'>
           <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -81,6 +81,7 @@ const Hero: React.FC<HeroProps> = ({ id }) => {
               Projects <Rocket className="w-5 h-5 xl:w-6 xl:h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </button>
           </MotionDiv>
+          </a>
         </div>
 
         {/* Right Content - Empty to preserve grid layout */}

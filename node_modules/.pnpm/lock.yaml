@@ -20,6 +20,9 @@ importers:
       react-dom:
         specifier: ^19.2.0
         version: 19.2.0(react@19.2.0)
+      wouter:
+        specifier: ^3.8.0
+        version: 3.8.0(react@19.2.0)
     devDependencies:
       '@types/node':
         specifier: ^22.14.0
@@ -517,6 +520,9 @@ packages:
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
+  mitt@3.0.1:
+    resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==}
+
   motion-dom@12.23.23:
     resolution: {integrity: sha512-n5yolOs0TQQBRUFImrRfs/+6X4p3Q4n1dUEqt/H58Vx7OW6RF+foWEgmTVDhIWJIMXOuNNL0apKH2S16en9eiA==}
 
@@ -558,6 +564,10 @@ packages:
     resolution: {integrity: sha512-tmbWg6W31tQLeB5cdIBOicJDJRR2KzXsV7uSK9iNfLWQ5bIZfxuPEHp7M8wiHyHnn0DD1i7w3Zmin0FtkrwoCQ==}
     engines: {node: '>=0.10.0'}
 
+  regexparam@3.0.0:
+    resolution: {integrity: sha512-RSYAtP31mvYLkAHrOlh25pCNQ5hWnT106VukGaaFfuJrZFkGRX5GhUAdPqpSDXxOhA2c4akmRuplv1mRqnBn6Q==}
+    engines: {node: '>=8'}
+
   rollup@4.53.3:
     resolution: {integrity: sha512-w8GmOxZfBmKknvdXU1sdM9NHcoQejwF/4mNgj2JuEEdRaHwwF12K7e9eXn1nLZ07ad+du76mkVsyeb2rKGllsA==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
@@ -594,6 +604,11 @@ packages:
     hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
+
+  use-sync-external-store@1.6.0:
+    resolution: {integrity: sha512-Pp6GSwGP/NrPIrxVFAIkOQeyw8lFenOHijQWkUTrDvrF4ALqylP2C/KCkeS9dpUM3KvYRQhna5vt7IL95+ZQ9w==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   vite@6.4.1:
     resolution: {integrity: sha512-+Oxm7q9hDoLMyJOYfUYBuHQo+dkAloi33apOPP56pzj+vsdJDzr+j1NISE5pyaAuKL4A3UD34qd0lx5+kfKp2g==}
@@ -634,6 +649,11 @@ packages:
         optional: true
       yaml:
         optional: true
+
+  wouter@3.8.0:
+    resolution: {integrity: sha512-oFQKbZVQxaXGXSuUg++FETTORSKQUur1Q+tvIlVm9TjPt+bpzS/IkRy2mXdSuqTjJ/PorSPxbRz4UwWsICes1Q==}
+    peerDependencies:
+      react: '>=16.8.0'
 
   yallist@3.1.1:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}
@@ -1039,6 +1059,8 @@ snapshots:
     dependencies:
       react: 19.2.0
 
+  mitt@3.0.1: {}
+
   motion-dom@12.23.23:
     dependencies:
       motion-utils: 12.23.6
@@ -1069,6 +1091,8 @@ snapshots:
   react-refresh@0.18.0: {}
 
   react@19.2.0: {}
+
+  regexparam@3.0.0: {}
 
   rollup@4.53.3:
     dependencies:
@@ -1121,6 +1145,10 @@ snapshots:
       escalade: 3.2.0
       picocolors: 1.1.1
 
+  use-sync-external-store@1.6.0(react@19.2.0):
+    dependencies:
+      react: 19.2.0
+
   vite@6.4.1(@types/node@22.19.1):
     dependencies:
       esbuild: 0.25.12
@@ -1132,5 +1160,12 @@ snapshots:
     optionalDependencies:
       '@types/node': 22.19.1
       fsevents: 2.3.3
+
+  wouter@3.8.0(react@19.2.0):
+    dependencies:
+      mitt: 3.0.1
+      react: 19.2.0
+      regexparam: 3.0.0
+      use-sync-external-store: 1.6.0(react@19.2.0)
 
   yallist@3.1.1: {}

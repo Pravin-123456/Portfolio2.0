@@ -22,10 +22,10 @@ const About: React.FC<AboutProps> = ({ id }) => {
              initial={{ opacity: 0, x: -50 }}
              whileInView={{ opacity: 1, x: 0 }}
              transition={{ duration: 0.8 }}
-             className="flex gap-12 items-baseline"
+             className="flex gap-5 items-baseline"
            >
-             <h2 className="text-5xl md:text-7xl 2xl:text-[9rem] font-bold text-white">ABOUT.</h2>
-             <h2 className="text-5xl md:text-7xl 2xl:text-[9rem] font-bold text-white">ME</h2>
+             <h2 className="text-5xl md:text-4xl 2xl:text-[9rem] font-bold text-white">ABOUT.</h2>
+             <h2 className="text-5xl md:text-4xl 2xl:text-[9rem] font-bold text-white">ME</h2>
            </MotionDiv>
 
            <MotionDiv 
@@ -69,10 +69,10 @@ const About: React.FC<AboutProps> = ({ id }) => {
                 animate={{ x: [0, 10, 0] }}
                 transition={{ repeat: Infinity, duration: 2 }}
               >
-                 <ArrowRight className="w-32 h-32 2xl:w-56 2xl:h-56 text-pink-300 rotate-45 md:rotate-0" strokeWidth={3} />
+                 <ArrowRight className="w-32 h-32 2xl:w-56 2xl:h-56 text-pink-300 rotate-90 md:rotate-0" strokeWidth={3} />
               </MotionDiv>
 
-              <button className="px-8 py-3 xl:px-14 xl:py-6 2xl:px-16 2xl:py-8 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full font-bold text-white xl:text-2xl 2xl:text-4xl hover:scale-105 transition-transform shadow-xl">
+              <button className="px-8 py-3 xl:px-4 xl:py-2 2xl:px-16 2xl:py-8 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full font-bold text-white xl:text-lg 2xl:text-xl hover:scale-105 transition-transform shadow-xl">
                 Grab my CV
               </button>
            </div>

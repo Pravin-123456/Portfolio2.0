@@ -26,6 +26,8 @@ const skillsData: Skill[] = [
   { name: 'Express', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg', percentage: 80 },
   { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', percentage: 75 },
   
+
+  
   // Center Item
   { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg', percentage: 95, isCenter: true },
   
@@ -72,7 +74,7 @@ const SkillItem: React.FC<SkillItemProps> = ({ skill, index }) => {
                         stroke="#8B5CF6"
                         strokeWidth="4"
                         strokeLinecap="round"
-                        initial={{ pathLength: 0, opacity: 0 }}
+                        initial={{ pathLength: 0}}
                         whileInView={{ opacity: 0.1 }}
                         whileHover={{ 
                             pathLength: skill.percentage / 100, 
@@ -88,7 +90,7 @@ const SkillItem: React.FC<SkillItemProps> = ({ skill, index }) => {
                     <img 
                         src={skill.icon} 
                         alt={skill.name} 
-                        className="w-12 h-12 md:w-24 md:h-24 2xl:w-32 2xl:h-32 object-contain group-hover:scale-90 group-hover:opacity-20 transition-all duration-500" 
+                        className="w-12 h-12 md:w-24 md:h-24 2xl:w-32 2xl:h-32 object-contain group-hover:scale-90 group-hover:opacity-20 group-hover:grayscale transition-all duration-500" 
                     />
                     {/* Percentage Text on Hover */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -148,7 +150,7 @@ const SkillItem: React.FC<SkillItemProps> = ({ skill, index }) => {
                 <img 
                     src={skill.icon} 
                     alt={skill.name} 
-                    className="w-10 h-10 md:w-14 md:h-14 2xl:w-20 2xl:h-20 object-contain opacity-40 group-hover:opacity-10 grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-90" 
+                    className="w-10 h-10 md:w-14 md:h-14 2xl:w-20 2xl:h-20 object-contain opacity-100 group-hover:opacity-20 group-hover:grayscale transition-all duration-300 group-hover:scale-90" 
                 />
                 
                 {/* Percentage Overlay */}
@@ -161,10 +163,17 @@ const SkillItem: React.FC<SkillItemProps> = ({ skill, index }) => {
 };
 
 const Skills: React.FC<SkillsProps> = ({ id }) => {
-  // Split data for the desktop layout logic
-  const leftSkills = skillsData.slice(0, 4);
-  const centerSkill = skillsData[4];
-  const rightSkills = skillsData.slice(5, 9);
+  // Dynamic split logic
+  let centerIndex = skillsData.findIndex(s => s.isCenter);
+  if (centerIndex === -1) {
+      centerIndex = Math.floor(skillsData.length / 2);
+  }
+  const centerSkill = skillsData[centerIndex];
+  const otherSkills = skillsData.filter((_, i) => i !== centerIndex);
+  const mid = Math.ceil(otherSkills.length / 2);
+  
+  const leftSkills = otherSkills.slice(0, mid);
+  const rightSkills = otherSkills.slice(mid);
 
   return (
     <section id={id} className="min-h-screen w-full bg-black flex flex-col justify-center py-24 relative overflow-hidden">
@@ -180,7 +189,7 @@ const Skills: React.FC<SkillsProps> = ({ id }) => {
                 transition={{ duration: 0.6 }}
                 className="mb-20 md:mb-32"
             >
-                 <h2 className="text-5xl md:text-7xl 2xl:text-[9rem] font-bold text-white">SKILLS</h2>
+                 <h2 className="text-5xl md:text-4xl 2xl:text-[9rem] font-bold text-white">SKILLS</h2>
             </MotionDiv>
 
             {/* Container for the Grid to keep it centered relative to the section width if needed, or full width */}
@@ -196,13 +205,13 @@ const Skills: React.FC<SkillsProps> = ({ id }) => {
 
                     {/* Center Orb */}
                     <div className="relative z-20 mx-4">
-                        <SkillItem skill={centerSkill} index={4} />
+                        <SkillItem skill={centerSkill} index={leftSkills.length} />
                     </div>
 
                     {/* Right 2x2 Grid */}
                     <div className="grid grid-cols-2 gap-4 xl:gap-6">
                         {rightSkills.map((skill, index) => (
-                            <SkillItem key={skill.name} skill={skill} index={index + 5} />
+                            <SkillItem key={skill.name} skill={skill} index={index + leftSkills.length + 1} />
                         ))}
                     </div>
                 </div>

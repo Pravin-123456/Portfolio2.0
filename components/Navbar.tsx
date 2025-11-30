@@ -147,11 +147,11 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, scrollTo }) => {
                   onClick={() => handleMobileNavClick(item.id)}
                   className="text-left group flex items-center gap-6"
                 >
-                  <span className="text-xs font-mono text-gray-600 group-hover:text-purple-400 transition-colors duration-300">
+                  <span className="text-lg font-mono text-gray-600 group-hover:text-purple-400 transition-colors duration-300">
                     0{index + 1}
                   </span>
                   <span
-                    className={`text-4xl font-bold tracking-tighter uppercase transition-all duration-300 ${activeSection === item.id
+                    className={`text-lg font-bold tracking-tighter uppercase transition-all duration-300 ${activeSection === item.id
                       ? 'text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 scale-105 origin-left'
                       : 'text-gray-400 group-hover:text-white group-hover:translate-x-2'
                       }`}
